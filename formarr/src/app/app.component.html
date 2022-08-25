@@ -1,0 +1,47 @@
+ <form [formGroup]="myForm" (ngSubmit)="loginForm()">
+  <label >
+    code:
+  </label><br>
+  <input type="text" formControlName="code"><br>
+
+    <label >
+    Number:
+    </label><br>
+
+  <input type="text" formControlName="number" > <br> <br>    
+  <div formArrayName="skils">
+  <div *ngFor="let skills of skils.controls;let i=index">
+    <div formGroupName="{{i}}" >
+    <label >Field Add</label>
+    <input type="text"  formControlName="Danny"  >
+    <button type="button" (click)="deleteEm(i)">Delete</button>
+  </div>
+</div> 
+</div>
+<br>
+
+     <!-- <button type="button" (click)="set()">Set at number 2</button><br/><br> -->
+     <button type="button" (click)="reset()">Reset   </button><br/><br>
+     <button type="button" (click)="clear()">clear </button><br/><br/><br>
+<button type="button" (click)=patchValue()>Patch Value</button><br/><br>
+<button type="button" (click)="insert()">Insert</button><br/><br><br>
+<button type="button" (click)="add()">Add Value</button><br/><br>
+<button type="button" (click)="RawValue()">RawValuee</button><br/><br><br>
+
+
+
+<button>submit</button>
+</form>
+
+
+
+
+<!-- *ngFor="let skill of myForm.get("skils").controls" -->
+
+
+
+<!-- 
+    <button type="button" (click)="insertEmployeeControl()">Insert Employee at number 2</button><br/>
+     -->
+
+  <!-- <button type="submit" (click)=AddSkill() >Add Skills</button><br><br> -->
